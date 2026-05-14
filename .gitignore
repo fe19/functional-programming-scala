@@ -1,0 +1,29 @@
+# sbt
+target/
+dist/
+project/target/
+.bsp/
+metals.sbt
+
+# IDE
+.idea/
+*.iml
+*.iws
+*.ipr
+.vscode/
+.metals/
+.scalafmt.conf
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+out/
+build/
+*.class
+*.jar
+
+# Misc
+.env
+*.log

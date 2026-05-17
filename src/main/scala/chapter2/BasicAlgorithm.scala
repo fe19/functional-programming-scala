@@ -4,9 +4,10 @@ import scala.annotation.tailrec
 
 /*
  * learnings
- * - recursive loops:         def loop(n: Int): Int
+ * - recursive loops:         def loop(n: Int): Int   - @tailrec for tail-recursive optimization
  * - recursive methods:       def go(n: Int, c: Int, ...): Int
  * - higher-order functions:  def format(n: Int, f: Int => Int)
+ * - anonymous functions      (x: Int) => x == 9
  * - generics:                def find[A]
  * - signature:               often defines implementation
  *
@@ -23,6 +24,16 @@ object BasicAlgorithm {
       else go(n-1, n * acc)
     }
     go(n, 1)
+
+
+  // tail recursive loop
+  def tailRecLoop(n: Int): Unit =
+    @tailrec
+    def loop(i: Int): Unit =
+      println(s"i=$i")
+      if i < n - 1 then loop(i + 1)
+
+    loop(0)
 
   // exercise 2.1
   def fib(n: Int): Int =
@@ -41,6 +52,11 @@ object BasicAlgorithm {
       else if p(as(n)) then n
       else loop(n+1)
     loop(0)
+
+  // exercise 2.2
+  def isSorted[A](as: Array[A], gt: (A, A) => Boolean): Boolean =
+    true
+
 
   def main(args: Array[String]): Unit = {
     println(factorial(5))

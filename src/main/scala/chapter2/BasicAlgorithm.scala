@@ -4,7 +4,7 @@ import scala.annotation.tailrec
 
 /*
  * learnings
- * - recursive loops:         def loop(n: Int): Int   - @tailrec for tail-recursive optimization
+ * - recursive loops:         def loop(n: Int): Int   - @tailrec for tail-recursive optimization, i.e., stable stack
  * - recursive methods:       def go(n: Int, c: Int, ...): Int
  * - higher-order functions:  def format(n: Int, f: Int => Int)
  * - anonymous functions      (x: Int) => x == 9
@@ -55,12 +55,21 @@ object BasicAlgorithm {
 
   // exercise 2.2
   def isSorted[A](as: Array[A], gt: (A, A) => Boolean): Boolean =
-    true
+    @tailrec
+    def loop(n: Int): Boolean =
+      if n == as.length then true
+      else if gt(as(n-1), as(n)) then false
+      else loop(n + 1)
+    loop(1)
 
 
   def main(args: Array[String]): Unit = {
     println(factorial(5))
     println(fib(6))
     println(findFirst(Array(1,2,3), (x: Int) => x==2))
+    println(isSorted(Array(1,2,3), _ > _))
+    println(isSorted(Array(1,2,1), _ > _))
+    println(isSorted(Array(3,2,1), _ < _))
+    println(isSorted(Array(1,2,3), _ < _))
   }
 }

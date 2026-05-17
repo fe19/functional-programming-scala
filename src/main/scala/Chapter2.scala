@@ -4,9 +4,11 @@ object Chapter2 {
 
   def factorial(n: Int): Int =
     @tailrec
-    def go(n: Int, acc: Int): Int =
+    def go(n: Int, acc: Int): Int = {
+      // println(s"go($n, $acc)")
       if n <= 0 then acc
       else go(n-1, n * acc)
+    }
     go(n, 1)
 
   def main(args: Array[String]): Unit = {

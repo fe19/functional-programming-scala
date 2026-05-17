@@ -2,7 +2,7 @@ package chapter2
 
 import scala.annotation.tailrec
 
-object Chapter2 {
+object BasicAlgorithm {
 
   def factorial(n: Int): Int =
     @tailrec

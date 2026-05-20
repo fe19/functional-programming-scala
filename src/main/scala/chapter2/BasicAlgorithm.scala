@@ -84,12 +84,12 @@ object BasicAlgorithm {
     println(isSorted(Array(1,2,1), _ > _))
     println(isSorted(Array(3,2,1), _ < _))
     println(isSorted(Array(1,2,3), _ < _))
+    
 
     def add(x: Int, y: Int) = x + y
     val addFive: Int => Int = partial1(5, add)
     println(addFive(10))
     println(add(4,5))
-
     //println(partial1(5, (x: Int, y: Int => x + y)))
   }
 }

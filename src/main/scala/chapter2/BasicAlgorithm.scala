@@ -76,6 +76,9 @@ object BasicAlgorithm {
   def uncurry[A,B,C](f: A => B => C): (A,B) => C =
     (a,b) => f(a)(b)
 
+  // exercise 2.5 (composition)
+  def compose[A,B,C](f:  B => C, g: A => B): A => C = ???
+
   def main(args: Array[String]): Unit = {
     println(factorial(5))
     println(fib(6))
@@ -84,7 +87,7 @@ object BasicAlgorithm {
     println(isSorted(Array(1,2,1), _ > _))
     println(isSorted(Array(3,2,1), _ < _))
     println(isSorted(Array(1,2,3), _ < _))
-    
+
 
     def add(x: Int, y: Int) = x + y
     val addFive: Int => Int = partial1(5, add)

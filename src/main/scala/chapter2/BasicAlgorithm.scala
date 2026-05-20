@@ -68,8 +68,12 @@ object BasicAlgorithm {
     (b: B) => f(a,b)
 
   // exercise 2.3 (currying)
-  def curry[A,B,C](f: (A,B) => C): A => (B => C) =
+  def curry[A,B,C](f: (A,B) => C): A => (B => C) = {
     a => b => f(a,b)
+  }
+
+  // exercise 2.4 (uncurry)
+  def uncurry[A,B,C](f: A => B => C): (A,B) => C = ???
 
   def main(args: Array[String]): Unit = {
     println(factorial(5))

@@ -8,9 +8,11 @@ import scala.annotation.tailrec
  * - recursive methods:       def go(n: Int, c: Int, ...): Int
  * - higher-order functions:  def format(n: Int, f: Int => Int)
  * - anonymous functions      (x: Int) => x == 9
+ * - anonymous arguments      _ > _ simpler as (x: Int, y: Int) => x > y
  * - generics:                def find[A]
- * - signature:               often defines implementation
- *
+ * - placeholder              (b: B) => ???   placeholder common to use for incrementally build up functionality
+ * - currying:               signature often defines implementation
+ * -
  */
 
 object BasicAlgorithm {
@@ -62,12 +64,16 @@ object BasicAlgorithm {
       else loop(n + 1)
     loop(1)
 
+  def partial1[A,B,C](a: A, f: (A,B) => C): B => C =
+    (b: B) => f(a,b)
+
+  // exercise 2.3 (currying)
 
   def main(args: Array[String]): Unit = {
     println(factorial(5))
     println(fib(6))
     println(findFirst(Array(1,2,3), (x: Int) => x==2))
-    println(isSorted(Array(1,2,3), _ > _))
+    println(isSorted(Array(1,2,3), (x: Int, y: Int) => x > y))
     println(isSorted(Array(1,2,1), _ > _))
     println(isSorted(Array(3,2,1), _ < _))
     println(isSorted(Array(1,2,3), _ < _))

@@ -73,7 +73,8 @@ object BasicAlgorithm {
   }
 
   // exercise 2.4 (uncurry)
-  def uncurry[A,B,C](f: A => B => C): (A,B) => C = ???
+  def uncurry[A,B,C](f: A => B => C): (A,B) => C =
+    (a,b) => f(a)(b)
 
   def main(args: Array[String]): Unit = {
     println(factorial(5))

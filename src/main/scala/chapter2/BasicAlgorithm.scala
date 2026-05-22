@@ -77,7 +77,8 @@ object BasicAlgorithm {
     (a,b) => f(a)(b)
 
   // exercise 2.5 (composition)
-  def compose[A,B,C](f:  B => C, g: A => B): A => C = ???
+  def compose[A,B,C](f:  B => C, g: A => B): A => C =
+    a => f(g(a))
 
   def main(args: Array[String]): Unit = {
     println(factorial(5))

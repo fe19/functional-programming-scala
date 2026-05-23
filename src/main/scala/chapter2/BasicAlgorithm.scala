@@ -95,5 +95,9 @@ object BasicAlgorithm {
     println(addFive(10))
     println(add(4,5))
     //println(partial1(5, (x: Int, y: Int => x + y)))
+
+    def multiply(x: Int, y: Int) = x * y
+    val composed: Int => Int = compose(addFive, addFive)
+    println(composed)
   }
 }

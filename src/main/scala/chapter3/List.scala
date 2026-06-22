@@ -1,7 +1,10 @@
 package chapter3
 
-class List {
+object List {
 
 
+  def main(args: Array[String]): Unit = {
+    println("Test")
+  }
 
 }

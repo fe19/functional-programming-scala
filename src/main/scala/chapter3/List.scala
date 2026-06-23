@@ -3,7 +3,7 @@ package chapter3
 /*
  * learnings
  * - concatenate              a ++ b
- * -
+ * - covariance               List[+A]
  * -
  * -
  * -

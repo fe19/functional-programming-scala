@@ -20,7 +20,8 @@ enum List[+A]:
 object List {
 
   def main(args: Array[String]): Unit = {
-    println("Test")
+    val l: List[String] = List.Cons("a", List.Cons("b", List.Nil))
+    println(l)
   }
 
 }

@@ -5,7 +5,7 @@ package chapter3
  * - concatenate              a ++ b
  * - covariance               List[+A]
  * - variadic function        accept zero or more arguments. E.g., def apply[A](as: A*)
- * -
+ * - pattern matching
  * -
  * -
  * -

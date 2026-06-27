@@ -5,9 +5,11 @@ package chapter3
  * - concatenate              a ++ b
  * - covariance               List[+A]
  * - variadic function        accept zero or more arguments. E.g., def apply[A](as: A*)
- * - List data structure      List(1,2,3) = Cons(1, Cons(2, Cons(3, Nil)))
- * - pattern matching         similar like switch statement. E.g., ints match case Nil => 0  case Cons(x, xs) => x + sum(xs)
- * -
+ * - Recursive List DS        List(1,2,3) = Cons(1, Cons(2, Cons(3, Nil)))
+ * - pattern matching         similar like a fancy switch statement. E.g., ints match case Nil => 0  case Cons(x, xs) => x + sum(xs)
+ *                            List(1,2,3) match {case _ => 42} = 42 since _ matches any expression
+ *                            List(1,2,3) match {case Cons(h,_) => h} = 1
+ *                            List(1,2,3) match {case Cons(_,h) => h} = List(2,3)
  * -
  * -
  * -

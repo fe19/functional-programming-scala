@@ -37,7 +37,7 @@ object BasicAlgorithm {
 
     loop(0)
 
-  // exercise 2.1
+  // ex 2.1
   def fib(n: Int): Int =
     @tailrec
     def go(n: Int, curr: Int, next: Int): Int =
@@ -55,7 +55,7 @@ object BasicAlgorithm {
       else loop(n+1)
     loop(0)
 
-  // exercise 2.2
+  // ex 2.2
   def isSorted[A](as: Array[A], gt: (A, A) => Boolean): Boolean =
     @tailrec
     def loop(n: Int): Boolean =
@@ -67,16 +67,16 @@ object BasicAlgorithm {
   def partial1[A,B,C](a: A, f: (A,B) => C): B => C =
     (b: B) => f(a,b)
 
-  // exercise 2.3 (currying)
+  // ex 2.3 (currying)
   def curry[A,B,C](f: (A,B) => C): A => (B => C) = {
     a => b => f(a,b)
   }
 
-  // exercise 2.4 (uncurry)
+  // ex 2.4 (uncurry)
   def uncurry[A,B,C](f: A => B => C): (A,B) => C =
     (a,b) => f(a)(b)
 
-  // exercise 2.5 (composition)
+  // ex2.5 (composition)
   def compose[A,B,C](f:  B => C, g: A => B): A => C =
     a => f(g(a))
 

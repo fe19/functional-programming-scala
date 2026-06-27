@@ -35,7 +35,7 @@ object List {
     case Nil => 1
     case Cons(x, xs) => x * product(xs)
 
-  // ex 3.2 (modifying lists)
+  // ex 3.2 (removing first element of a list). Complexity is O(1)
   def tail[A](xs: List[A]): List[A] = xs match
     case Nil => Nil
     case Cons(x, xs) => xs
@@ -61,10 +61,18 @@ object List {
       else as
     case Nil => Nil
 
+  // Add all elements of list a2 to the end of list a1. O(n) where n is the length of list a1
   def append[A](a1: List[A], a2: List[A]): List[A] = a1 match
     case Nil => a2
     case Cons(h, ts) =>
       Cons(h, append(ts, a2))
+
+  // ex 3.6 (remove last element of a list). O(n) and not tail recursion
+  def init[A](as: List[A]): List[A] = as match
+    case Nil => Nil
+    case Cons(x, Nil) => Nil
+    case Cons(h, ts) => Cons(h, init(ts))
+
 
   def main(args: Array[String]): Unit = {
     val l: List[String] = List.Cons("a", List.Cons("b", List.Nil))
@@ -77,6 +85,7 @@ object List {
     println(drop(l1,2))
     println(dropWhile(l1, x => x < 2))
     println(append(l1, l2))
+    println(init(l1))
   }
 
 }

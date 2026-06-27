@@ -38,6 +38,11 @@ object List {
     case Nil => Nil
     case Cons(x, xs) => xs
 
+  // ex 3.3
+  def setHead[A](xs: List[A], x:A): List[A] = xs match
+    case Nil => Nil
+    case Cons(_, xs) => Cons(x, xs)
+
   def main(args: Array[String]): Unit = {
     val l: List[String] = List.Cons("a", List.Cons("b", List.Nil))
     val l1 = List(1,2,3)
@@ -45,6 +50,7 @@ object List {
     println(sum(l1))
     println(product(l2))
     println(tail(l1))
+    println(setHead(l1,3))
   }
 
 }

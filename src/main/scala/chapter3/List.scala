@@ -53,6 +53,14 @@ object List {
       case Nil => Nil
       case Cons(_, as) => drop(as, n-1)
 
+  // ex 3.5 (drop as long predicate matches)
+  @tailrec
+  def dropWhile[A](as: List[A], f: A => Boolean): List[A] = as match
+    case Cons(h, tl) =>
+      if f(h) then dropWhile(tl, f)
+      else as
+    case Nil => Nil
+
   def main(args: Array[String]): Unit = {
     val l: List[String] = List.Cons("a", List.Cons("b", List.Nil))
     val l1 = List(1,2,3)
@@ -62,6 +70,7 @@ object List {
     println(tail(l1))
     println(setHead(l1,3))
     println(drop(l1,2))
+    println(dropWhile(l1, x => x < 2))
   }
 
 }

@@ -1,5 +1,7 @@
 package chapter3
 
+import scala.annotation.tailrec
+
 /*
  * learnings
  * - concatenate              a ++ b
@@ -38,10 +40,18 @@ object List {
     case Nil => Nil
     case Cons(x, xs) => xs
 
-  // ex 3.3
+  // ex 3.3 (replace first element)
   def setHead[A](xs: List[A], x:A): List[A] = xs match
     case Nil => Nil
     case Cons(_, xs) => Cons(x, xs)
+
+  // ex 3.4 (drop first n elements)
+  @tailrec
+  def drop[A](as: List[A], n: Int): List[A] =
+    if n <= 0 then as
+    else as match
+      case Nil => Nil
+      case Cons(_, as) => drop(as, n-1)
 
   def main(args: Array[String]): Unit = {
     val l: List[String] = List.Cons("a", List.Cons("b", List.Nil))
@@ -51,6 +61,7 @@ object List {
     println(product(l2))
     println(tail(l1))
     println(setHead(l1,3))
+    println(drop(l1,2))
   }
 
 }

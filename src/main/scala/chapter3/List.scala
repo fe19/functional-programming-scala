@@ -5,8 +5,8 @@ package chapter3
  * - concatenate              a ++ b
  * - covariance               List[+A]
  * - variadic function        accept zero or more arguments. E.g., def apply[A](as: A*)
- * - pattern matching         ints match case Nil => 0  case Cons(x, xs) => x + sum(xs)
- * -
+ * - List data structure      List(1,2,3) = Cons(1, Cons(2, Cons(3, Nil)))
+ * - pattern matching         similar like switch statement. E.g., ints match case Nil => 0  case Cons(x, xs) => x + sum(xs)
  * -
  * -
  * -
@@ -27,9 +27,16 @@ object List {
     case Nil => 0
     case Cons(x, xs) => x + sum(xs)
 
+  def product(doubles: List[Double]): Double = doubles match
+    case Nil => 1
+    case Cons(x, xs) => x * product(xs)
+
   def main(args: Array[String]): Unit = {
     val l: List[String] = List.Cons("a", List.Cons("b", List.Nil))
-    println(l)
+    val l1 = List(1,2,3)
+    val l2 = List(1.0,2.0,3.0)
+    println(sum(l1))
+    println(product(l2))
   }
 
 }

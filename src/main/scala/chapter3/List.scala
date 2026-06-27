@@ -61,6 +61,11 @@ object List {
       else as
     case Nil => Nil
 
+  def append[A](a1: List[A], a2: List[A]): List[A] = a1 match
+    case Nil => a2
+    case Cons(h, ts) =>
+      Cons(h, append(ts, a2))
+
   def main(args: Array[String]): Unit = {
     val l: List[String] = List.Cons("a", List.Cons("b", List.Nil))
     val l1 = List(1,2,3)
@@ -71,6 +76,7 @@ object List {
     println(setHead(l1,3))
     println(drop(l1,2))
     println(dropWhile(l1, x => x < 2))
+    println(append(l1, l2))
   }
 
 }

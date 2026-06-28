@@ -81,7 +81,7 @@ object List {
     foldRight(as, 0, (x,y) => x + y)
 
   def productFold(as: List[Double]): Double =
-    foldRight(as, 1.0, (x,y) => x * y)
+    foldRight(as, 1.0, _ * _)
 
 
   def main(args: Array[String]): Unit = {

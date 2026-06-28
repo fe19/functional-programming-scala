@@ -14,7 +14,7 @@ import scala.annotation.tailrec
  *                            List(1,2,3) match {case Cons(_,h) => h} = List(2,3)
  * - data sharing             do not copy lists, reuse it. E.g., add 1 to xs -> Cons(1, xs)
  * - function arguments       avoid duplication by generalizing and put specialization into function argument
- * -
+ * - anonymous functions      _ + _ = (x,y) => x + y
  */
 
 enum List[+A]:
@@ -98,6 +98,8 @@ object List {
     println(dropWhile(l1, x => x < 2))
     println(append(l1, l2))
     println(init(l1))
+    print("ex 3.8: ")
+    println(foldRight(List(1,2,3), Nil: List[Int], Cons(_,_)))
   }
 
 }

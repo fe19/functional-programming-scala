@@ -80,6 +80,9 @@ object List {
   def sumFold(as: List[Int]): Int =
     foldRight(as, 0, (x,y) => x + y)
 
+  def productFold(as: List[Double]): Double =
+    foldRight(as, 1.0, (x,y) => x * y)
+
 
   def main(args: Array[String]): Unit = {
     val l: List[String] = List.Cons("a", List.Cons("b", List.Nil))
@@ -88,6 +91,7 @@ object List {
     println(sum(l1))
     println(sumFold(l1))
     println(product(l2))
+    println(productFold(l2))
     println(tail(l1))
     println(setHead(l1,3))
     println(drop(l1,2))

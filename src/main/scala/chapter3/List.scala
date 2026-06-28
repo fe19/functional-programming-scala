@@ -13,7 +13,7 @@ import scala.annotation.tailrec
  *                            List(1,2,3) match {case Cons(h,_) => h} = 1
  *                            List(1,2,3) match {case Cons(_,h) => h} = List(2,3)
  * - data sharing             do not copy lists, reuse it. E.g., add 1 to xs -> Cons(1, xs)
- * -
+ * - function arguments       avoid duplication by generalizing and put specialization into function argument
  * -
  */
 
@@ -73,12 +73,20 @@ object List {
     case Cons(x, Nil) => Nil
     case Cons(h, ts) => Cons(h, init(ts))
 
+  def foldRight[A,B](as: List[A], acc: B, f: (A,B) => B): B = as match
+    case Nil => acc
+    case Cons(x, xs) => f(x, foldRight(xs, acc, f))
+
+  def sumFold(as: List[Int]): Int =
+    foldRight(as, 0, (x,y) => x + y)
+
 
   def main(args: Array[String]): Unit = {
     val l: List[String] = List.Cons("a", List.Cons("b", List.Nil))
     val l1 = List(1,2,3)
     val l2 = List(1.0,2.0,3.0)
     println(sum(l1))
+    println(sumFold(l1))
     println(product(l2))
     println(tail(l1))
     println(setHead(l1,3))

@@ -83,6 +83,9 @@ object List {
   def productFold(as: List[Double]): Double =
     foldRight(as, 1.0, _ * _)
 
+  // ex 3.9
+  def length[A](as: List[A]): Int =
+    foldRight(as, 0, (_, acc) => acc + 1)
 
   def main(args: Array[String]): Unit = {
     val l: List[String] = List.Cons("a", List.Cons("b", List.Nil))
@@ -100,6 +103,7 @@ object List {
     println(init(l1))
     print("ex 3.8: ")
     println(foldRight(List(1,2,3), Nil: List[Int], Cons(_,_)))
+    println(length(l1))
   }
 
 }

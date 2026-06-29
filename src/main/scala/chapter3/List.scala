@@ -93,6 +93,7 @@ object List {
     case Cons(x, xs) => f(foldLeft(xs, acc, f), x)
 
   // ex 3.11 (use fold left)
+  def sumFoldLeft(as: List[Int]): Int
 
   def main(args: Array[String]): Unit = {
     val l: List[String] = List.Cons("a", List.Cons("b", List.Nil))

@@ -87,6 +87,10 @@ object List {
   def length[A](as: List[A]): Int =
     foldRight(as, 0, (_, acc) => acc + 1)
 
+  // ex 3.10 fold with tail recursion
+  def foldLeft[A,B(as: List[A], acc: B, f: (B,A) => B)]: B
+
+
   def main(args: Array[String]): Unit = {
     val l: List[String] = List.Cons("a", List.Cons("b", List.Nil))
     val l1 = List(1,2,3)

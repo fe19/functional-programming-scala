@@ -113,6 +113,7 @@ object List {
     print("ex 3.8: ")
     println(foldRight(List(1,2,3), Nil: List[Int], Cons(_,_)))
     println(length(l1))
+    println(sumFoldLeft(l1))
   }
 
 }

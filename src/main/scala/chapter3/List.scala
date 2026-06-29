@@ -87,10 +87,12 @@ object List {
   def length[A](as: List[A]): Int =
     foldRight(as, 0, (_, acc) => acc + 1)
 
-  // ex 3.10 fold with tail recursion
+  // ex 3.10 (fold with tail recursion)
   def foldLeft[A,B](as: List[A], acc: B, f: (B,A) => B): B = as match
     case Nil => acc
     case Cons(x, xs) => f(foldLeft(xs, acc, f), x)
+
+  // ex 3.11 (use fold left)
 
   def main(args: Array[String]): Unit = {
     val l: List[String] = List.Cons("a", List.Cons("b", List.Nil))

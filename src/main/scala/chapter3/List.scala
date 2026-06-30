@@ -88,9 +88,10 @@ object List {
     foldRight(as, 0, (_, acc) => acc + 1)
 
   // ex 3.10 (fold with tail recursion)
+  @tailrec
   def foldLeft[A,B](as: List[A], acc: B, f: (B,A) => B): B = as match
     case Nil => acc
-    case Cons(x, xs) => f(foldLeft(xs, acc, f), x)
+    case Cons(x, xs) => foldLeft(xs, f(acc,x), f)
 
   // ex 3.11 (use fold left)
   def sumFoldLeft(as: List[Int]): Int =

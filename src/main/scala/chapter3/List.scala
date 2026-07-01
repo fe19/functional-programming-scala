@@ -97,6 +97,8 @@ object List {
   def sumFoldLeft(as: List[Int]): Int =
     foldLeft(as, 0, (x,y) => x + y)
 
+  // ex 3.12 (reverse a list)
+
   def main(args: Array[String]): Unit = {
     val l: List[String] = List.Cons("a", List.Cons("b", List.Nil))
     val l1 = List(1,2,3)

@@ -119,6 +119,7 @@ object List {
     println(foldRight(List(1,2,3), Nil: List[Int], Cons(_,_)))
     println(length(l1))
     println(sumFoldLeft(l1))
+    println(reverse(l1))
   }
 
 }

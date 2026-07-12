@@ -99,7 +99,7 @@ object List {
 
   // ex 3.12 (reverse a list)
   def reverse[A](as: List[A]): List[A] =
-    Nil
+    foldLeft(as, Nil: List[A], (acc, a) => Cons(a, acc))
 
   def main(args: Array[String]): Unit = {
     val l: List[String] = List.Cons("a", List.Cons("b", List.Nil))

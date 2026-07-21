@@ -102,7 +102,7 @@ object List {
     foldLeft(as, Nil: List[A], (acc, a) => Cons(a, acc))
 
   // ex 3.13 (fold right)
-  def foldRightViaLeft[A,B](as: List[A], acc:B, f:(B,A) => B): B = as match
+  def foldRightViaLeft[A,B](as: List[A], acc:B, f:(A,B) => B): B = as match
     case Nil => acc
 
   def main(args: Array[String]): Unit = {

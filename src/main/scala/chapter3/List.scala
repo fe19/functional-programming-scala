@@ -73,6 +73,7 @@ object List {
     case Cons(x, Nil) => Nil
     case Cons(h, ts) => Cons(h, init(ts))
 
+  // fold takes a list, a starting value, and a combining function. It combines all elements into a single value.
   def foldRight[A,B](as: List[A], acc: B, f: (A,B) => B): B = as match
     case Nil => acc
     case Cons(x, xs) => f(x, foldRight(xs, acc, f))

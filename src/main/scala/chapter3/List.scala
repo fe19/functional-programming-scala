@@ -103,8 +103,8 @@ object List {
     foldLeft(as, Nil: List[A], (acc, a) => Cons(a, acc))
 
   // ex 3.13 (fold right)
-  def foldRightViaLeft[A,B](as: List[A], acc:B, f:(A,B) => B): B = as match
-    case Nil => acc
+  def foldRightViaLeft[A,B](as: List[A], acc:B, f:(A,B) => B): B =
+    foldLeft(reverse(as),acc, (b,a) => f(a,b))
 
   def main(args: Array[String]): Unit = {
     val l: List[String] = List.Cons("a", List.Cons("b", List.Nil))

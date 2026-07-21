@@ -106,7 +106,9 @@ object List {
   def foldRightViaLeft[A,B](as: List[A], acc:B, f:(A,B) => B): B =
     foldLeft(reverse(as),acc, (b,a) => f(a,b))
 
-  // ex.3.13 (append with fold)
+  // ex.3.14 (append with fold)
+  def appendViaFold[A](a1: List[A], a2: List[A]): List[A] =
+    foldRight(a1, a2, Cons(_,_))
 
   def main(args: Array[String]): Unit = {
     val l: List[String] = List.Cons("a", List.Cons("b", List.Nil))
@@ -127,6 +129,7 @@ object List {
     println(length(l1))
     println(sumFoldLeft(l1))
     println(reverse(l1))
+    println(appendViaFold(l1, l2))
   }
 
 }

@@ -106,6 +106,8 @@ object List {
   def foldRightViaLeft[A,B](as: List[A], acc:B, f:(A,B) => B): B =
     foldLeft(reverse(as),acc, (b,a) => f(a,b))
 
+  // ex.3.13 (append with fold)
+
   def main(args: Array[String]): Unit = {
     val l: List[String] = List.Cons("a", List.Cons("b", List.Nil))
     val l1 = List(1,2,3)

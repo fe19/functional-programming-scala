@@ -110,10 +110,13 @@ object List {
   def appendViaFold[A](a1: List[A], a2: List[A]): List[A] =
     foldRight(a1, a2, Cons(_,_))
 
-  // ex 3.15 (concatenate lists)
+  // concatenate lists
   def concatLists[A](as: List[A]*): List[A] =
     if as.isEmpty then Nil
     else  append(as.head, concatLists(as.tail*))
+
+  // ex 3.15 (concatenate list of lists)
+
 
   def main(args: Array[String]): Unit = {
     val l: List[String] = List.Cons("a", List.Cons("b", List.Nil))

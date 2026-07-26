@@ -109,6 +109,8 @@ object List {
   // ex.3.14 (append with fold)
   def appendViaFold[A](a1: List[A], a2: List[A]): List[A] =
     foldRight(a1, a2, Cons(_,_))
+    
+  // ex 3.15 (concatenate lists)
 
   def main(args: Array[String]): Unit = {
     val l: List[String] = List.Cons("a", List.Cons("b", List.Nil))

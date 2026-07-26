@@ -116,6 +116,8 @@ object List {
     else  append(as.head, concatLists(as.tail*))
 
   // ex 3.15 (concatenate list of lists)
+  def concat[A](as: List[List[A]]): List[A] =
+    Nil
 
 
   def main(args: Array[String]): Unit = {

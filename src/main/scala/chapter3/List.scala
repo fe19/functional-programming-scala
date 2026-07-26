@@ -140,7 +140,7 @@ object List {
     println(sumFoldLeft(l1))
     println(reverse(l1))
     println(appendViaFold(l1, l2))
-    println(concatLists(l1, l2,l1))
+    println(concat(List(l1,l2)))
   }
 
 }

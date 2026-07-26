@@ -117,7 +117,7 @@ object List {
 
   // ex 3.15 (concatenate list of lists)
   def concat[A](as: List[List[A]]): List[A] =
-    Nil
+    foldRight(as, Nil: List[A], append)
 
 
   def main(args: Array[String]): Unit = {

@@ -111,8 +111,9 @@ object List {
     foldRight(a1, a2, Cons(_,_))
 
   // ex 3.15 (concatenate lists)
-  def concatLists[A](a: List[A]*): List[A] =
-    Nil
+  def concatLists[A](as: List[A]*): List[A] =
+    if as.isEmpty then Nil
+    else  append(as.head, concatLists(as.tail*))
 
   def main(args: Array[String]): Unit = {
     val l: List[String] = List.Cons("a", List.Cons("b", List.Nil))
@@ -134,7 +135,7 @@ object List {
     println(sumFoldLeft(l1))
     println(reverse(l1))
     println(appendViaFold(l1, l2))
-    println(concatLists(l1, l2))
+    println(concatLists(l1, l2,l1))
   }
 
 }

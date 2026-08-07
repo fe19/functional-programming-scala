@@ -120,6 +120,7 @@ object List {
     foldRight(as, Nil: List[A], append)
 
 
+
   def main(args: Array[String]): Unit = {
     val l: List[String] = List.Cons("a", List.Cons("b", List.Nil))
     val l1 = List(1,2,3)

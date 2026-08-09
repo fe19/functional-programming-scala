@@ -120,12 +120,12 @@ object List {
     foldRight(as, Nil: List[A], append)
 
   // ex 3.16 transform list by adding 1
-  def addOne(as: List[Int]): List[Int] = {
+  def addOne(as: List[Int]): List[Int] =
     foldRight(as, Nil: List[Int], (i, acc) => Cons(i + 1, acc))
-    
-    // ex 3.17 transform double to string
-    def transformString(as: List[Double]): List[String] =
-      Nil
+
+  // ex 3.17 transform double to string
+  def doubleToString(as: List[Double]): List[String] =
+      foldRight(as, Nil: List[String], (i, acc) => Cons(i.toString, acc))
 
 
 
@@ -151,6 +151,7 @@ object List {
     println(appendViaFold(l1, l2))
     println(concat(List(l1,l2)))
     println(addOne(l1))
+    println(doubleToString(l2))
   }
 
 }

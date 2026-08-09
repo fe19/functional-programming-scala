@@ -121,7 +121,7 @@ object List {
 
   // ex 3.16 transform list by adding 1
   def addOne(as: List[Int]): List[Int] =
-    Nil
+    foldRight(as, Nil: List[Int], (i, acc) => Cons(i + 1, acc))
 
 
 

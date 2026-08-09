@@ -119,6 +119,8 @@ object List {
   def concat[A](as: List[List[A]]): List[A] =
     foldRight(as, Nil: List[A], append)
 
+  // ex 3.16 transform list by adding 1
+
 
 
   def main(args: Array[String]): Unit = {

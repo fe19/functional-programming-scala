@@ -120,6 +120,8 @@ object List {
     foldRight(as, Nil: List[A], append)
 
   // ex 3.16 transform list by adding 1
+  def addOne(as: List[Int]): List[Int] =
+    Nil
 
 
 

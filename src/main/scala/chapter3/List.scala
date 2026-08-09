@@ -146,6 +146,7 @@ object List {
     println(reverse(l1))
     println(appendViaFold(l1, l2))
     println(concat(List(l1,l2)))
+    println(addOne(l1))
   }
 
 }

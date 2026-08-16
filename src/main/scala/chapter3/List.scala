@@ -160,6 +160,7 @@ object List {
     println(addOne(l1))
     println(doubleToString(l2))
     println(map(l1, a => a + 1))
+    println(filter(l1, a => a > 2))
   }
 
 }

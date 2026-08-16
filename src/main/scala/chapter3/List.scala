@@ -131,6 +131,10 @@ object List {
   def map[A,B](as: List[A], f: A => B): List[B] =
     foldRight(as, Nil: List[B], (i,acc) => Cons(f(i), acc))
 
+  // ex 3.19 filter
+  def filter[A](as: List[A], f: A => Boolean): List[A] =
+    Nil
+
 
   def main(args: Array[String]): Unit = {
     val l: List[String] = List.Cons("a", List.Cons("b", List.Nil))

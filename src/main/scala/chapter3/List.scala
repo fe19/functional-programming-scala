@@ -129,7 +129,7 @@ object List {
 
   // ex 3.18 map
   def map[A,B](as: List[A], f: A => B): List[B] =
-    Nil
+    foldRight(as, Nil: List[B], (i,acc) => Cons(f(i), acc))
 
 
   def main(args: Array[String]): Unit = {

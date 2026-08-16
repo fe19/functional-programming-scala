@@ -128,7 +128,8 @@ object List {
       foldRight(as, Nil: List[String], (i, acc) => Cons(i.toString, acc))
 
   // ex 3.18 map
-
+  def map[A,B](as: List[A], f: A => B): List[B] =
+    Nil
 
 
   def main(args: Array[String]): Unit = {

@@ -127,6 +127,8 @@ object List {
   def doubleToString(as: List[Double]): List[String] =
       foldRight(as, Nil: List[String], (i, acc) => Cons(i.toString, acc))
 
+  // ex 3.18 map
+
 
 
   def main(args: Array[String]): Unit = {

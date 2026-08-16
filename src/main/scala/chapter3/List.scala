@@ -133,7 +133,7 @@ object List {
 
   // ex 3.19 filter
   def filter[A](as: List[A], f: A => Boolean): List[A] =
-    Nil
+    foldRight(as, Nil: List[A], (a,acc) => if f(a) then Cons(a, acc) else acc)
 
 
   def main(args: Array[String]): Unit = {

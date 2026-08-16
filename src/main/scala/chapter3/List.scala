@@ -155,6 +155,7 @@ object List {
     println(concat(List(l1,l2)))
     println(addOne(l1))
     println(doubleToString(l2))
+    println(map(l1, a => a + 1))
   }
 
 }

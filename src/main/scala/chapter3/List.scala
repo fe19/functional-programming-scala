@@ -140,7 +140,7 @@ object List {
 
   // ex 3.20 flatMap
   def flatMap[A,B](as: List[A], f: A => List[B]): List[B] =
-    Nil
+    foldRight(as, Nil: List[B], (i, acc) => append(f(i), acc))
 
   def main(args: Array[String]): Unit = {
     val l: List[String] = List.Cons("a", List.Cons("b", List.Nil))

@@ -15,6 +15,9 @@ import scala.annotation.tailrec
  * - data sharing             do not copy lists, reuse it. E.g., add 1 to xs -> Cons(1, xs)
  * - function arguments       avoid duplication by generalizing and put specialization into function argument
  * - anonymous functions      _ + _ = (x,y) => x + y
+ * - folding                  takes list, a start value, and a binary function and applies the function until one value remains
+ * - leftFold                 starts from left to right
+ * - Java folding             List.of(1,2,3).stream().reduce(0, (acc + x) -> acc + x);
  */
 
 enum List[+A]:

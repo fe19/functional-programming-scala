@@ -164,6 +164,7 @@ object List {
     println(doubleToString(l2))
     println(map(l1, a => a + 1))
     println(filter(l1, a => a > 2))
+    println(flatMap(List(1,2,3), i => List(i,i)))
   }
 
 }

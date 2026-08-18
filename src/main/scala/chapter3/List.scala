@@ -172,6 +172,7 @@ object List {
     println(map(l1, a => a + 1))
     println(filter(l1, a => a > 2))
     println(flatMap(List(1,2,3), i => List(i,i)))
+    println(filterFlatMap(List(1,2,3), a => a % 2 == 0))
   }
 
 }

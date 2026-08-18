@@ -144,7 +144,7 @@ object List {
 
   // ex 3.21 filter with flat map
   def filterFlatMap[A](as: List[A], f: A => Boolean): List[A] =
-    Nil
+    flatMap(as, i => if f(i) then List(i) else Nil)
 
   def main(args: Array[String]): Unit = {
     val l: List[String] = List.Cons("a", List.Cons("b", List.Nil))

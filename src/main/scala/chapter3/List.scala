@@ -142,6 +142,10 @@ object List {
   def flatMap[A,B](as: List[A], f: A => List[B]): List[B] =
     foldRight(as, Nil: List[B], (i, acc) => append(f(i), acc))
 
+  // ex 3.21 filter with flat map
+  def filterFlatMap[A](as: List[A], f: A => Boolean): List[A] =
+    Nil
+
   def main(args: Array[String]): Unit = {
     val l: List[String] = List.Cons("a", List.Cons("b", List.Nil))
     val l1 = List(1,2,3)

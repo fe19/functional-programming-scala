@@ -147,8 +147,10 @@ object List {
     flatMap(as, i => if f(i) then List(i) else Nil)
 
   // ex 3.22
-  def addLists(as: List[Int], bs: List[Int]): List[Int] =
-    Nil
+  def addLists(as: List[Int], bs: List[Int]): List[Int] = (as, bs) match
+    case (Nil,_) => Nil
+    case (_,Nil) => Nil
+    case(Cons(h1,t1), Cons(h2,t2)) => Cons(h1 + h2, addLists(t1,t2))
 
   def main(args: Array[String]): Unit = {
     val l: List[String] = List.Cons("a", List.Cons("b", List.Nil))

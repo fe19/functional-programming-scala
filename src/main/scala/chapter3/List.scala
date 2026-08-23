@@ -152,7 +152,11 @@ object List {
     case (_,Nil) => Nil
     case(Cons(h1,t1), Cons(h2,t2)) => Cons(h1 + h2, addLists(t1,t2))
 
-  // ex 3.23
+  // ex 3.23 general adding of elements
+  def addGeneralLists[A](as: List[A], bs: List[A]): List[A] = (as, bs) match
+    case (Nil,_) => Nil
+    case (_,Nil) => Nil
+    case(Cons(h1,t1), Cons(h2,t2)) => Cons(h1 + h2, addGeneralLists(t1, t2))
 
   def main(args: Array[String]): Unit = {
     val l: List[String] = List.Cons("a", List.Cons("b", List.Nil))
@@ -182,6 +186,7 @@ object List {
     println(flatMap(List(1,2,3), i => List(i,i)))
     println(filterFlatMap(List(1,2,3), a => a % 2 == 0))
     println(addLists(List(1,2,3), List(4,5,6)))
+    println(addGeneralLists(List("a","b","c"), List(4,5,6)))
   }
 
 }

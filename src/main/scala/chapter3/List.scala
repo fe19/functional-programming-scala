@@ -159,7 +159,7 @@ object List {
     case (_,Nil) => Nil
     case(Cons(h1,t1), Cons(h2,t2)) => Cons(f(h1,h2), addGeneralLists(t1, t2, f))
 
-  // ex 3.34 hasSubsequence 
+  // ex 3.34 hasSubsequence
   def hasSubsequence[A](sup: List[A], sub: List[A]): Boolean
   = true
 
@@ -192,6 +192,7 @@ object List {
     println(filterFlatMap(List(1,2,3), a => a % 2 == 0))
     println(addLists(List(1,2,3), List(4,5,6)))
     println(addGeneralLists(List("a","b","c"), List(4,5,6), (a,b) => a + b))
+    println(hasSubsequence(List(1,2,3,4), List(1,2)))
   }
 
 }

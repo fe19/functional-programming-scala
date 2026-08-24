@@ -159,7 +159,9 @@ object List {
     case (_,Nil) => Nil
     case(Cons(h1,t1), Cons(h2,t2)) => Cons(f(h1,h2), addGeneralLists(t1, t2, f))
 
-  // ex 3.34
+  // ex 3.34 hasSubsequence 
+  def hasSubsequence[A](sup: List[A], sub: List[A]): Boolean
+  = Nil
 
   def main(args: Array[String]): Unit = {
     val l: List[String] = List.Cons("a", List.Cons("b", List.Nil))

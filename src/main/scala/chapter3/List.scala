@@ -161,7 +161,7 @@ object List {
 
   // ex 3.34 hasSubsequence 
   def hasSubsequence[A](sup: List[A], sub: List[A]): Boolean
-  = Nil
+  = true
 
   def main(args: Array[String]): Unit = {
     val l: List[String] = List.Cons("a", List.Cons("b", List.Nil))

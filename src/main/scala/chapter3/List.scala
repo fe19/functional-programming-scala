@@ -4,6 +4,7 @@ import scala.annotation.tailrec
 
 /*
  * learnings
+ * - cons                     construct = operation that splits a list into first element and remainder. Cons(h,t)
  * - concatenate              a ++ b
  * - covariance               List[+A]
  * - variadic function        accept zero or more arguments. E.g., def apply[A](as: A*)

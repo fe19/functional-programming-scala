@@ -160,6 +160,7 @@ object List {
     case(Cons(h1,t1), Cons(h2,t2)) => Cons(f(h1,h2), addGeneralLists(t1, t2, f))
 
   // ex 3.24 hasSubsequence
+  @annotation.tailrec
   def hasSubsequence[A](sup: List[A], sub: List[A]): Boolean
   = true
 

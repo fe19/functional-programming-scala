@@ -163,6 +163,9 @@ object List {
   def hasSubsequence[A](sup: List[A], sub: List[A]): Boolean
   = true
 
+  def startsWith[A](l: List[A], prefix: List[A]): Boolean =
+    false
+
   def main(args: Array[String]): Unit = {
     val l: List[String] = List.Cons("a", List.Cons("b", List.Nil))
     val l1 = List(1,2,3)

@@ -163,6 +163,7 @@ object List {
   def hasSubsequence[A](sup: List[A], sub: List[A]): Boolean
   = true
 
+  @annotation.tailrec
   def startsWith[A](l: List[A], prefix: List[A]): Boolean =
     false
 

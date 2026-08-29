@@ -167,9 +167,9 @@ object List {
 
   @annotation.tailrec
   def startsWith[A](as: List[A], bs: List[A]): Boolean = (as, bs) match
-    case(_,Nil) => true
+    case(_,Nil) => true // looped through prefix list
     case(Cons(h1,t1),Cons(h2,t2)) if h1 == h2 => startsWith(t1,t2)
-    case _ => false
+    case _ => false // default case when two elements did not match
 
   def main(args: Array[String]): Unit = {
     val l: List[String] = List.Cons("a", List.Cons("b", List.Nil))

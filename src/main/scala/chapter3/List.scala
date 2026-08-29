@@ -161,12 +161,13 @@ object List {
 
   // ex 3.24 hasSubsequence
   @annotation.tailrec
-  def hasSubsequence[A](sup: List[A], sub: List[A]): Boolean = sup match
-    case Nil => false
-    case(Cons(h,t)) => hasSubsequence(t, sub)
+  def hasSubsequence[A](as: List[A], sub: List[A]): Boolean = as match
+    case Nil => true
+    case Cons(h,t) if startsWith(as, sub) => hasSubsequence(t, sub)
+    case _ => false
 
   @annotation.tailrec
-  def startsWith[A](as: List[A], bs: List[A]): Boolean = (as, bs) match
+  def startsWith[A](as: List[A], sub: List[A]): Boolean = (as, sub) match
     case(_,Nil) => true // looped through prefix list
     case(Cons(h1,t1),Cons(h2,t2)) if h1 == h2 => startsWith(t1,t2)
     case _ => false // default case when two elements did not match
@@ -201,7 +202,7 @@ object List {
     println(addLists(List(1,2,3), List(4,5,6)))
     println(addGeneralLists(List("a","b","c"), List(4,5,6), (a,b) => a + b))
     println(startsWith(List(1,2,3,4), List(1,2)))
-    println(hasSubsequence(List(1,2,3,4), List(1,2)))
+    println(hasSubsequence(List(1,2,3,4), List(2,3)))
   }
 
 }

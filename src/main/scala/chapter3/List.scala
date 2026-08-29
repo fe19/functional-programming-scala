@@ -166,8 +166,10 @@ object List {
     case(Cons(h,t)) => hasSubsequence(t, sub)
 
   @annotation.tailrec
-  def startsWith[A](l: List[A], prefix: List[A]): Boolean =
-    false
+  def startsWith[A](as: List[A], bs: List[A]): Boolean = (as, bs) match
+    case(_,Nil) => true
+    case(Cons(h1,t1),Cons(h2,t2)) if h1 == h2 => startsWith(t1,t2)
+    case _ => false
 
   def main(args: Array[String]): Unit = {
     val l: List[String] = List.Cons("a", List.Cons("b", List.Nil))

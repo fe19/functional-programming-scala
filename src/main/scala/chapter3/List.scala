@@ -161,8 +161,9 @@ object List {
 
   // ex 3.24 hasSubsequence
   @annotation.tailrec
-  def hasSubsequence[A](sup: List[A], sub: List[A]): Boolean
-  = true
+  def hasSubsequence[A](sup: List[A], sub: List[A]): Boolean = sup match
+    case Nil => false
+    case(Cons(h,t)) => hasSubsequence(t, sub)
 
   @annotation.tailrec
   def startsWith[A](l: List[A], prefix: List[A]): Boolean =
@@ -197,6 +198,7 @@ object List {
     println(filterFlatMap(List(1,2,3), a => a % 2 == 0))
     println(addLists(List(1,2,3), List(4,5,6)))
     println(addGeneralLists(List("a","b","c"), List(4,5,6), (a,b) => a + b))
+    println(startsWith(List(1,2,3,4), List(1,2)))
     println(hasSubsequence(List(1,2,3,4), List(1,2)))
   }
 

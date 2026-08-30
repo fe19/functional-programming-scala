@@ -2,7 +2,8 @@ package chapter3
 
 /*
  * learnings
- *
+ * - method vs function       method belongs to object, function is standalone
+ * -
  */
 
 

@@ -19,6 +19,7 @@ import scala.annotation.tailrec
  * - folding                  takes list, a start value, and a binary function and applies the function until one value remains
  * - leftFold                 starts from left to right
  * - Java folding             List.of(1,2,3).stream().reduce(0, (acc + x) -> acc + x);
+ * - ADT                      Algebraic Data Types - defined by one or more constructors with zero or more arguments
  */
 
 enum List[+A]:

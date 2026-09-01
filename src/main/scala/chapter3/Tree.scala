@@ -19,4 +19,3 @@ object Tree:
   def size[A](t: Tree[A]): Int = t match // this is a function
     case Leaf(_) => 1
     case Branch(l, r) =>  1 + size(l) + size(r)
-
